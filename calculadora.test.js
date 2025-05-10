@@ -1,21 +1,25 @@
 const Calculadora = require('./calculadora')
 
 describe('Calculadora', () => {
+  const calc = new Calculadora()
+
   it('Deverá retornar a soma de dois números', () => {
-    //Seu código aqui
-    
+    expect(calc.soma(5, 3)).toBe(8)
   })
 
   it('Deverá retornar a subtração de dois números', () => {
-    //Seu código aqui
-    
+    expect(calc.subtrai(10, 4)).toBe(6)
   })
 
   it('Deverá retornar a multiplicação entre dois números', () => {
-    //Seu código aqui
+    expect(calc.multiplica(6, 7)).toBe(42)
   })
 
   it('Deverá retornar a divisao entre dois números', () => {
-    //Seu código aqui
+    expect(calc.divide(20, 4)).toBe(5)
+  })
+
+  it('Deverá lançar erro ao tentar dividir por zero', () => {
+    expect(() => calc.divide(10, 0)).toThrow('Divisão por zero não é permitida')
   })
 })
